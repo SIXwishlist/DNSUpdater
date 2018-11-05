@@ -1,0 +1,57 @@
+#dnsupdatersettings{
+
+	#dyndnsserviceselection {
+		label {
+			display: inline-block;
+			width: 110px;
+			text-align: right;
+		}
+
+		select{
+			width: 200px;
+		}
+
+	}
+
+	.ip-service-message{
+		display: inline-block;
+		margin-left: 10px;
+	}
+
+	.entry{
+		&:first-child{
+			border-top: 2px solid grey;
+		}
+
+	    border-bottom: 2px solid grey;
+	    padding: 5px;
+	    display: table;
+
+		label {
+		    display:inline-block;
+		    width: 200px;
+		    text-align: right;
+		}
+
+		input:not([type='checkbox']),
+		select{
+		    box-sizing:  border-box;
+		    width: 120px;
+		}
+
+		input[type='checkbox']{
+			vertical-align: middle;
+		    margin-right: 107px;
+		    margin-left: 0px;
+		}
+	}
+
+	#entrytemplate{
+		display:none;
+	}
+
+	button{
+		margin: 10px 0px;
+	}
+
+}

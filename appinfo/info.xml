@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>dnsupdater</id>
+    <name>DNS Updater</name>
+    <summary>Update your dynamic DNS accounts.</summary>
+    <description><![CDATA[Allows you to update multiple dynamic DNS accounts.]]></description>
+    <version>0.0.212</version>
+    <licence>agpl</licence>
+    <author mail="test@test.de" homepage="http://www.test.de">Cthulhu</author>
+    <namespace>DNSUpdater</namespace>
+    <category>tools</category>
+    <bugs>http://www.test2.de</bugs>
+    <dependencies>
+        <nextcloud min-version="13" max-version="14"/>
+    </dependencies>
+
+	<settings>
+		<admin>OCA\DNSUpdater\Settings\AdminSettings</admin>
+	</settings>
+
+    <repair-steps>
+        <install>
+            <step>OCA\DNSUpdater\Migration\InitRepairStep</step>
+        </install>
+    </repair-steps>
+</info>
