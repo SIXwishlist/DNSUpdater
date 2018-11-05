@@ -35,28 +35,22 @@ style('dnsupdater', 'settings-admin');
 
 	<div id="dyndns-entries">
 		<?php
-		//p((int)isset($_['savedentries'][1]));
-		//p((int)isset($_['savedentries'][0]));
-			if ( isset($_['savedentries'][0] )) {
-				for($i=0; isset($_['savedentries'][$i]); $i++){
-					$params = json_decode($_['savedentries'][$i], true);
-					$params['id'] = $i;
-					print_unescaped($this->inc('settings/entry', $params));
-				}
-			}
-			else {
-				print_unescaped($this->inc('settings/entry', array('id' => 0)));
+			for($i=0; isset($_['savedentries'][$i]); $i++){
+				$params = json_decode($_['savedentries'][$i], true);
+				$params['id'] = $i;
+				print_unescaped($this->inc('settings/entry', $params));
 			}
 		?>
 	</div>
-
-	<button id="dyndnssave" class=""><?php p($l->t('Save and Test DynDNS Settings')); ?></button>
+	
+	<button id="dyndnstest" class=""><?php p($l->t('Test Settings')); ?></button>
 
 	<div id="entrytemplate">
 		<?php print_unescaped($this->inc('settings/entry')); ?>
 	</div>
 
 	<?php
+	print_unescaped('<br><br><br>');
 	var_dump($_);
 	?><br><br><?php
 	//var_Dump($theme);

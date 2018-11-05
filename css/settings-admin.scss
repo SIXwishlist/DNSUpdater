@@ -26,6 +26,35 @@
 	    border-bottom: 2px solid grey;
 	    padding: 5px;
 	    display: table;
+		position: relative;
+		padding-right: 40px;
+
+		.deletewrapper{
+			height: 100%;
+			width: 32px;
+			float: right;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: flex;
+			justify-content: right;
+			align-items: center;
+
+			.deleteicon	{
+				background-repeat: no-repeat;
+				cursor: pointer;
+				background-image: var(--icon-delete-000);
+				width: 16px;
+				height: 16px;
+				margin-right: 8px;
+
+				&:hover{
+					background-image: var(--icon-delete-e9322d);
+					filter: initial;
+				}
+			}
+
+		}
 
 		label {
 		    display:inline-block;

@@ -19,9 +19,6 @@ $(function() {
 		thisselct.attr('disabled',true);
 		var service = $(this).val();
 		OCP.AppConfig.setValue('dnsupdater', thisselct.attr('id'), service);
-		var option = {};
-		OCP.AppConfig.getValue('dnsupdater', thisselct.attr('id'), option);
-		console.log(option);
 		var baseUrl = OC.generateUrl('/apps/dnsupdater/time/' + service);
 		var messagep = $(this).next();
 		$.post( baseUrl)
@@ -39,7 +36,9 @@ $(function() {
 			});
 	});
 
-	// On Change of DNS Settings
+	/**
+	* On Change of DNS Settings save them
+	*/
 	$('.entry select, .entry input').change(function(){
 	    var iddiv = $(this).closest('.entry');
 		var id = parseInt(iddiv.attr('id').replace(/entry/, ''));
@@ -52,11 +51,12 @@ $(function() {
 			params: iddiv.find('input[name=params]').val(),
 	        https: iddiv.find('input[name=usehttps]').prop( 'checked' ),
 	    };
-	    console.log(valueObj);
 		OCP.AppConfig.setValue('dnsupdater', id, JSON.stringify(valueObj));
 	});
 
-
+	/**
+	* Add new Entry
+	*/
 	$('#dyndnsaddentry').click(function() {
 		var id = 0;
 		$('#dyndns-entries > div').each(function () {
@@ -66,12 +66,11 @@ $(function() {
 			.clone(true, true)
 			.attr('id','entry' + id)
 			.appendTo( "#dyndns-entries" );
-
 	});
 
 
 
-	$('#dyndnssave').click(function() {
+	$('#dyndnstest').click(function() {
 		var allEntries = new Object();
 		var id = 0;
 		$('#dyndns-entries > div').each(function () {

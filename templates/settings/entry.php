@@ -1,4 +1,7 @@
 <div class="entry" id="entry<?php p($_['id']); ?>">
+    <div class="deletewrapper">
+        <div class="deleteicon" title="<?php p('Delete this entry.'); ?>"></div>
+    </div>
     <label>
         Provider:
         <select name="provider">
